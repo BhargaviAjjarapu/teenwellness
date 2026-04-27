@@ -1,24 +1,37 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>MindSpace - Teen Wellness</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MindSpace | Teen Wellness</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <h1>MindSpace Wellness</h1>
-    
-    <div class="breathing-container">
-        <div class="breathing-circle"></div>
-    </div>
-    <button id="breath-btn" onclick="toggleBreathing()">Start Breathing Exercise</button>
 
-    <hr>
-    <h3>How are you feeling today?</h3>
-    <button onclick="logMood('Happy')">😊 Happy</button>
-    <button onclick="logMood('Stressed')">😰 Stressed</button>
-    <button onclick="logMood('Calm')">😌 Calm</button>
-    
-    <p id="mood-display">Select a mood to track it!</p>
+    <div class="container">
+        <h1>MindSpace</h1>
+        <p>Your mental health companion.</p>
+
+        <div class="section">
+            <h2>Breathing Exercise</h2>
+            <div class="breathing-container">
+                <div class="circle" id="breath-circle"></div>
+            </div>
+            <button onclick="toggleBreathing()" id="breath-btn">Start Breathing</button>
+        </div>
+
+        <div class="section">
+            <h2>Mood Tracker</h2>
+            <p>How are you feeling right now?</p>
+            <div class="mood-buttons">
+                <button onclick="logMood('Happy', '😊')">😊 Happy</button>
+                <button onclick="logMood('Stressed', '😰')">😰 Stressed</button>
+                <button onclick="logMood('Calm', '😌')">😌 Calm</button>
+                <button onclick="logMood('Tired', '😴')">😴 Tired</button>
+            </div>
+            <p id="mood-status">No mood tracked yet today.</p>
+        </div>
+    </div>
 
     <script src="script.js"></script>
 </body>
