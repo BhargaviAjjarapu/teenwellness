@@ -1,23 +1,23 @@
-// 1. Mood Tracker Logic
-function logMood(mood) {
-  const display = document.getElementById('mood-display');
-  display.innerText = "Today you are feeling: " + mood;
-  display.style.color = "#4a90e2";
+// Breathing logic
+let isAnimating = false;
+
+function toggleBreathing() {
+    const circle = document.getElementById('breath-circle');
+    const btn = document.getElementById('breath-btn');
+
+    if (!isAnimating) {
+        circle.classList.add('animating');
+        btn.innerText = "Stop Exercise";
+        isAnimating = true;
+    } else {
+        circle.classList.remove('animating');
+        btn.innerText = "Start Breathing";
+        isAnimating = false;
+    }
 }
 
-// 2. Breathing Exercise Logic
-let isBreathing = false;
-function toggleBreathing() {
-  const circle = document.querySelector('.breathing-circle');
-  const btn = document.getElementById('breath-btn');
-  
-  if (!isBreathing) {
-    circle.style.animation = "breath 8s infinite ease-in-out";
-    btn.innerText = "Stop Breathing Exercise";
-    isBreathing = true;
-  } else {
-    circle.style.animation = "none";
-    btn.innerText = "Start Breathing Exercise";
-    isBreathing = false;
-  }
+// Mood logic
+function logMood(moodName, emoji) {
+    const status = document.getElementById('mood-status');
+    status.innerHTML = `You feeling <strong>${moodName} ${emoji}</strong>. Take a deep breath!`;
 }
