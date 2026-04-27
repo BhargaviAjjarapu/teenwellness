@@ -3,34 +3,50 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MindSpace | Teen Wellness</title>
+    <title>MindSpace Pro | Wellness</title>
     <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
 <body>
+    <div class="app-container">
+        <header>
+            <h1>MindSpace</h1>
+            <p>Your Daily Wellness Hub</p>
+        </header>
 
-    <div class="container">
-        <h1>MindSpace</h1>
-        <p>Your mental health companion.</p>
-
-        <div class="section">
-            <h2>Breathing Exercise</h2>
-            <div class="breathing-container">
-                <div class="circle" id="breath-circle"></div>
+        <section class="card">
+            <h3>Mood Tracker</h3>
+            <div class="mood-options">
+                <button onclick="addMood(5)">😊</button>
+                <button onclick="addMood(4)">🙂</button>
+                <button onclick="addMood(3)">😐</button>
+                <button onclick="addMood(2)">😔</button>
+                <button onclick="addMood(1)">😫</button>
             </div>
-            <button onclick="toggleBreathing()" id="breath-btn">Start Breathing</button>
-        </div>
+            <canvas id="moodChart"></canvas>
+        </section>
 
-        <div class="section">
-            <h2>Mood Tracker</h2>
-            <p>How are you feeling right now?</p>
-            <div class="mood-buttons">
-                <button onclick="logMood('Happy', '😊')">😊 Happy</button>
-                <button onclick="logMood('Stressed', '😰')">😰 Stressed</button>
-                <button onclick="logMood('Calm', '😌')">😌 Calm</button>
-                <button onclick="logMood('Tired', '😴')">😴 Tired</button>
+        <section class="card">
+            <h3>Square Breathing</h3>
+            <p id="breath-text">Click start to begin</p>
+            <div class="breathing-box">
+                <div id="breath-circle" class="circle"></div>
             </div>
-            <p id="mood-status">No mood tracked yet today.</p>
-        </div>
+            <button onclick="startBreathing()">Start Exercise</button>
+        </section>
+
+        <section class="card">
+            <h3>Focus Timer</h3>
+            <div class="timer-display" id="timer">25:00</div>
+            <p id="timer-label">Work Session</p>
+            <button onclick="toggleTimer()" id="timer-btn">Start Timer</button>
+        </section>
+
+        <section class="card">
+            <h3>Vent Box</h3>
+            <textarea id="ventInput" placeholder="Dump your thoughts here... (Private)"></textarea>
+            <button onclick="clearVent()">Clear Space</button>
+        </section>
     </div>
 
     <script src="script.js"></script>
